@@ -90,6 +90,7 @@ public class HomePage {
 
     public String[] expectListOfProductTypes() {
         String[] expectList = {
+
                 "Ноутбуки и компьютеры",
                 "Смартфоны, ТВ и электроника",
                 "Бытовая техника",

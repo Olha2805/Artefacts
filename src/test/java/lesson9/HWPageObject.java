@@ -42,11 +42,13 @@ public class HWPageObject extends TestBaseSetup {
            List <WebElement> factList = homePage.actualListOfProductTypes();
            String [] expectedList = homePage.expectListOfProductTypes();
            //   List <String> expectedList = Arrays.asList(homePage.expectListOfProductTypes());
+           int i;
            for (WebElement typesOfProduct: factList) {
                String actualList = typesOfProduct.getText();
 
-               for (String expectedString: expectedList){
-                   assertEquals(expectedString, actualList);
+               for (i=0; i<=expectedList.length; i++){
+                   String expectedString = expectedList[i];
+                   assertEquals(actualList, expectedString);
                }
 
            }
