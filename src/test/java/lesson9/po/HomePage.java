@@ -29,6 +29,15 @@ public class HomePage {
     By passwordRegCell = By.cssSelector("[type='password']");
     By tapToBottomReg = By.cssSelector("[type='submit']");
     By nameError = By.cssSelector("[class='form__row js-name validation_type_error']");
+    private final By typesList = By.cssSelector("[class='menu-categories__link']");
+    private final By qaLinks = By.cssSelector("[name='slider-block-active']");
+    By registration = By.cssSelector("[class='header-topline__user-link link-dashed']");
+    By bottomRegistration = By.cssSelector("[class='auth-modal__register-link']");
+    By nameRegCell = By.cssSelector("[formcontrolname='name']");
+    By mailRegCell = By.cssSelector("[formcontrolname='username']");
+    By passwordRegCell = By.cssSelector("[type='password']");
+    By tapToBottomReg = By.cssSelector("[type='submit']");
+    By nameError = By.cssSelector("[class='form__row js-name validation_type_error']");
     Logger logger = LogManager.getLogger(HomePage.class);
     By tapToLaptopsAndComputers = By.cssSelector("[href='https://rozetka.com.ua/computers-notebooks/c80253/']");
     By tapToLaptop = By.cssSelector("[title='Ноутбуки']");

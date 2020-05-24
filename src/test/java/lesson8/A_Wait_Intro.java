@@ -35,8 +35,8 @@ public class A_Wait_Intro {
     public void beforeMethod() {
         System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--disable-notifications");
-        options.addArguments("--window-size=1300,1080");
+       options.addArguments("--disable-notifications");
+       options.addArguments("--window-size=1300,1080");
         //options.addArguments("--incognito");
         driver = new ChromeDriver(options);
         wait = new WebDriverWait(driver, 10);
