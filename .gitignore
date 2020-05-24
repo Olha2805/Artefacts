@@ -2,3 +2,6 @@
 *.iml
 target
 *.exe
+*.properties
+logs/
+screenshots/

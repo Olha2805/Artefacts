@@ -1,11 +1,14 @@
 package test.java.lesson9.po;
 
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import java.util.List;
 
 public class HomePage {
     private final WebDriver driver;
@@ -17,16 +20,31 @@ public class HomePage {
     By popup = By.cssSelector(popupStrSelect);
     By popupClose = By.cssSelector(popupStrSelect + " [class='popup-close']");
     By contactBtn = By.cssSelector("[href='https://rozetka.com.ua/contacts/']");
+    private final By typesList = By.cssSelector("[class='menu-categories__link']");
+    private final By qaLinks = By.cssSelector("[name='slider-block-active']");
+    By registration = By.cssSelector("[class='header-topline__user-link link-dashed']");
+    By bottomRegistration = By.cssSelector("[class='auth-modal__register-link']");
+    By nameRegCell = By.cssSelector("[formcontrolname='name']");
+    By mailRegCell = By.cssSelector("[formcontrolname='username']");
+    By passwordRegCell = By.cssSelector("[type='password']");
+    By tapToBottomReg = By.cssSelector("[type='submit']");
+    By nameError = By.cssSelector("[class='form__row js-name validation_type_error']");
+    Logger logger = LogManager.getLogger(HomePage.class);
 
 
     public HomePage(WebDriver driver) {
+        logger.trace("Home Page initialized");
         this.driver = driver;
         wait = new WebDriverWait(this.driver, 10);
     }
 
 
     public HomePage open() {
+        logger.info("Open");
+        logger.error("Open");
+        logger.warn("Open");
         driver.get("https://rozetka.com.ua/");
+        logger.debug("URL: " + driver.getCurrentUrl());
         return this;
     }
 
@@ -54,4 +72,78 @@ public class HomePage {
         driver.findElement(contactBtn).click();
         return this;
     }
+
+    public List<WebElement> actualListOfProductTypes() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(typesList));
+        return driver.findElements(typesList);
+    }
+
+    public String[] expectListOfProductTypes() {
+        String[] expectList = {
+                "Ноутбуки и компьютеры",
+                "Смартфоны, ТВ и электроника",
+                "Бытовая техника",
+                "Товары для дома",
+                "Инструменты и автотовары",
+                "Сантехника и ремонт",
+                "Дача, сад и огород",
+                "Спорт и увлечения",
+                "Одежда, обувь и украшения",
+                "Красота и здоровье",
+                "Детские товары",
+                "Канцтовары и книги",
+                "Алкогольные напитки и продукты",
+                "Товары для бизнеса",
+                "Услуги и сервисы",
+                "Продовольственные наборы"
+        };
+        return expectList;
+    }
+
+     public HomePage tapToCheckIn () {
+         WebElement tapToRegistrationBottom = driver.findElement(registration);
+         wait.until(ExpectedConditions.elementToBeClickable(tapToRegistrationBottom)).click();   // click to check-in
+         return this;
+    }
+
+    public HomePage tapToReg (){
+
+            WebElement tapToBottomRegistration = driver.findElement(bottomRegistration);
+            wait.until(ExpectedConditions.elementToBeClickable(tapToBottomRegistration)).click();    // click to registration bottom
+            return this;
+    }
+
+    public HomePage tapToRegCell(){
+        WebElement tapToFirstRegistrationCell = driver.findElement(nameRegCell);
+        wait.until(ExpectedConditions.elementToBeClickable(nameRegCell)).click();   // tap to cell for a name input
+            return this;
+    }
+
+    public HomePage writeName(){
+        WebElement tupToFirstRegistrationCell1 = driver.findElement(nameRegCell);
+        wait.until(ExpectedConditions.elementToBeClickable(nameRegCell)).click();   // tup to cell for a name input
+        tupToFirstRegistrationCell1.sendKeys("блаблабла");
+        return this;
+    }
+
+    public HomePage tapToMailCell () {
+
+        WebElement tapToSecondRegistrationCell = driver.findElement(mailRegCell);
+        wait.until(ExpectedConditions.elementToBeClickable(mailRegCell)).click();   // tap to cell for a mail input
+    return this;
+    }
+
+    public HomePage tapToPasswordCell () {
+
+        WebElement tupToThirdRegistrationSell = driver.findElement(passwordRegCell);
+        wait.until(ExpectedConditions.elementToBeClickable(passwordRegCell)).click();   //tup to cell for a password input
+    return this;
+    }
+
+    public HomePage tapToUltimateRegistration () {
+        WebElement tupToReg = driver.findElement(tapToBottomReg);
+        wait.until(ExpectedConditions.elementToBeClickable(tapToBottomReg)).click();    // tup to registration bottom
+    return this;
+    }
+
 }
