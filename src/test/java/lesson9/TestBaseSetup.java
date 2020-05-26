@@ -24,8 +24,8 @@ public class TestBaseSetup {
     }
 
     @AfterMethod
-    public void afterMethod(ITestResult result) {
-        screenshot.getScreenshot(result);
+    public void afterMethod() { //ITestResult result
+        //screenshot.getScreenshot(result);
         driver.quit();
     }
 }
