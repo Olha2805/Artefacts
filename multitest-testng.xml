@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="First suite" parallel="classes" thread-count="5">
+    <test name="First test">
+        <classes>
+            <class name="test.java.lesson9.TestFirstParallel"/>
+            <class name="test.java.lesson9.TestSecondParallel"/>
+        </classes>
+    </test>
+
+</suite>
