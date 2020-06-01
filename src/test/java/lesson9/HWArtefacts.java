@@ -1,6 +1,7 @@
 package test.java.lesson9;
 
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
@@ -12,6 +13,7 @@ import static org.testng.AssertJUnit.assertTrue;
 
 public class HWArtefacts extends TestBaseSetup {
     HomePage homePage;
+    WebDriver driver;
 
 
     @BeforeMethod

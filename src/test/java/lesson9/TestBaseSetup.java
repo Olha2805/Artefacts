@@ -1,6 +1,7 @@
 package test.java.lesson9;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -28,7 +29,7 @@ public class TestBaseSetup {
         /*try {
             driver = new RemoteWebDriver(new URL("http://ec2-18-222-204-253.us-east-2.compute.amazonaws.com:4444/wd/hub"), optionsCH);
         } catch (MalformedURLException e) {
-
+            e.printStackTrace();
         }*/
         screenshot = new Screenshot(driver);
     }
