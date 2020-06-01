@@ -25,17 +25,17 @@ public class TestBaseSetup {
         optionsCH.addArguments("--window-size=1300,1080");
         FirefoxOptions optionsFF = new FirefoxOptions();
         //driver = new ChromeDriver();
-        try {
+        /*try {
             driver = new RemoteWebDriver(new URL("http://ec2-18-222-204-253.us-east-2.compute.amazonaws.com:4444/wd/hub"), optionsCH);
         } catch (MalformedURLException e) {
 
-        }
+        }*/
         screenshot = new Screenshot(driver);
     }
 
     @AfterMethod
-    public void afterMethod(ITestResult result) {
-        screenshot.getScreenshot(result);
+    public void afterMethod() { // ITestResult result
+       // screenshot.getScreenshot(result);
         driver.quit();
     }
 }
