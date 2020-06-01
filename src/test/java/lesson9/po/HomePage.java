@@ -29,7 +29,20 @@ public class HomePage {
     By passwordRegCell = By.cssSelector("[type='password']");
     By tapToBottomReg = By.cssSelector("[type='submit']");
     By nameError = By.cssSelector("[class='form__row js-name validation_type_error']");
+    private final By typesList = By.cssSelector("[class='menu-categories__link']");
+    private final By qaLinks = By.cssSelector("[name='slider-block-active']");
+    By registration = By.cssSelector("[class='header-topline__user-link link-dashed']");
+    By bottomRegistration = By.cssSelector("[class='auth-modal__register-link']");
+    By nameRegCell = By.cssSelector("[formcontrolname='name']");
+    By mailRegCell = By.cssSelector("[formcontrolname='username']");
+    By passwordRegCell = By.cssSelector("[type='password']");
+    By tapToBottomReg = By.cssSelector("[type='submit']");
+    By nameError = By.cssSelector("[class='form__row js-name validation_type_error']");
     Logger logger = LogManager.getLogger(HomePage.class);
+    By tapToLaptopsAndComputers = By.cssSelector("[href='https://rozetka.com.ua/computers-notebooks/c80253/']");
+    By tapToLaptop = By.cssSelector("[title='Ноутбуки']");
+    By brandAcer = By.cssSelector("[for='Acer']");
+    By brandList = By.cssSelector("[class='goods-tile__inner']");
 
 
     public HomePage(WebDriver driver) {
@@ -40,9 +53,6 @@ public class HomePage {
 
 
     public HomePage open() {
-        logger.info("Open");
-        logger.error("Open");
-        logger.warn("Open");
         driver.get("https://rozetka.com.ua/");
         logger.debug("URL: " + driver.getCurrentUrl());
         return this;
@@ -80,6 +90,7 @@ public class HomePage {
 
     public String[] expectListOfProductTypes() {
         String[] expectList = {
+
                 "Ноутбуки и компьютеры",
                 "Смартфоны, ТВ и электроника",
                 "Бытовая техника",
@@ -144,6 +155,35 @@ public class HomePage {
         WebElement tupToReg = driver.findElement(tapToBottomReg);
         wait.until(ExpectedConditions.elementToBeClickable(tapToBottomReg)).click();    // tup to registration bottom
     return this;
+    }
+
+    public HomePage selectLaptopsAndComputers (){
+        WebElement selectLaptopsAndComputers = driver.findElement(tapToLaptopsAndComputers);
+        wait.until(ExpectedConditions.elementToBeClickable(tapToLaptopsAndComputers)).click();
+        return this;
+    }
+
+    public HomePage selectLaptops (){
+        WebElement selectLaptop = driver.findElement(tapToLaptop);
+        wait.until(ExpectedConditions.elementToBeClickable(tapToLaptop)).click();
+        return this;
+    }
+
+    public HomePage alternativeWay (){
+        driver.get("https://rozetka.com.ua/notebooks/c80004/");
+        logger.debug("URL: " + driver.getCurrentUrl());
+        return this;
+    }
+
+    public HomePage selectAcer (){
+        WebElement selectBrandAcer = driver.findElement(brandAcer);
+        wait.until(ExpectedConditions.elementToBeClickable(brandAcer)).click();
+        return this;
+    }
+
+    public List<WebElement> getBrandsList (){
+        wait.until(ExpectedConditions.visibilityOfElementLocated(brandList));
+        return driver.findElements(By.linkText(String.valueOf(brandList)));
     }
 
 }
