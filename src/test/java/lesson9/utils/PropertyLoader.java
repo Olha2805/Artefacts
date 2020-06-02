@@ -1,4 +1,4 @@
-package test.java.utils;
+package test.java.lesson9.utils;
 
 import java.util.ResourceBundle;
 

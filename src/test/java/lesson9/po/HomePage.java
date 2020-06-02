@@ -9,6 +9,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import test.java.lesson9.utils.PropertyLoader;
+
 import java.util.List;
 
 public class HomePage {
@@ -36,7 +38,7 @@ public class HomePage {
     By brandAcer = By.cssSelector("[for='Acer']");
     By brandList = By.cssSelector("[class='goods-tile__inner']");
 
-    public WebDriver getDriverByName(String browserType) {
+   /* public WebDriver getDriverByName(String browserType) {
         WebDriver driver=null;
         if (browserType.equals("ie")) {
             System.setProperty("webdriver.ie.driver", "/IEDriverServer.exe"); // here we should write the pass
@@ -49,7 +51,7 @@ public class HomePage {
             driver = new FirefoxDriver();
         }
         return driver;
-    }
+    }*/
 
 
     public HomePage(WebDriver driver) {
@@ -61,6 +63,9 @@ public class HomePage {
 
     public HomePage open() {
         driver.get("https://rozetka.com.ua/");
+        driver.get(PropertyLoader.loadProperty("url"));
+        //el.sendKeys(PropertyLoader.loadProperty("login");
+        //el2.sendKeys(PropertyLoader.loadProperty("password");
         logger.debug("URL: " + driver.getCurrentUrl());
         return this;
     }

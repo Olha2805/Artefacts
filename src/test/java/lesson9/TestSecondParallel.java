@@ -1,11 +1,10 @@
 package test.java.lesson9;
 
-
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-
 import test.java.lesson9.po.HomePage;
 
+import static org.testng.Assert.fail;
 
 public class TestSecondParallel extends TestBaseSetup {
     HomePage homePage;
@@ -22,9 +21,10 @@ public class TestSecondParallel extends TestBaseSetup {
         homePage.open();
     }
 
-    @Test
+    @Test ()
     public void testB() {
         homePage.open();
+        fail();
     }
 
 

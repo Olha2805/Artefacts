@@ -1,4 +1,4 @@
-package test.java.utils;
+package test.java.lesson9.utils;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
