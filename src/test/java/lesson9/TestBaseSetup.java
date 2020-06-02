@@ -1,5 +1,7 @@
 package test.java.lesson9;
 
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -35,6 +37,17 @@ public class TestBaseSetup {
 
     @AfterMethod
     public void afterMethod(ITestResult result) {
+
         driver.quit();
+    }
+
+ //  @Attachment
+    private String attachstring (){
+        return "Hello attach";
+    }
+
+ //   @Attachment (value = "screenshot", type = "image/png")
+    private String attachscrin (){
+        return ((TakesScreenshot)driver).getScreenshotAs(OutputType.BASE64);
     }
 }

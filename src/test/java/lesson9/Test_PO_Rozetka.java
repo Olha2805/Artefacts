@@ -1,5 +1,6 @@
 package test.java.lesson9;
 
+
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -35,6 +36,7 @@ public class Test_PO_Rozetka extends TestBaseSetup {
         }
     }
 
+  //  @Feature("searching system")
     @Test
     public void testB() {
         homePage
@@ -43,5 +45,20 @@ public class Test_PO_Rozetka extends TestBaseSetup {
                 .clickContacts();
         contactPage.clickFaq();
         faqPage.getQuestions();
+    }
+
+  //  @Feature("Add to the card")
+  //  @Story ("Positive test")
+    @Test
+    public void testLurrre(){
+        homePage.open().clickContacts();
+        contactPage.clickFaq();
+        faqPage.getQuestions();
+    }
+
+ //   @Feature("opening")
+    @Test
+    public void testNext(){
+        homePage.open();
     }
 }

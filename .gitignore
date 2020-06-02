@@ -5,3 +5,5 @@ target
 *.properties
 logs/
 screenshots/
+allure-results/
+allure-report/

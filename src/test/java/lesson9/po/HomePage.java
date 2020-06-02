@@ -1,5 +1,6 @@
 package test.java.lesson9.po;
 
+
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
@@ -60,7 +61,7 @@ public class HomePage {
         wait = new WebDriverWait(this.driver, 10);
     }
 
-
+  //  @Step ("Open home page")
     public HomePage open() {
         driver.get("https://rozetka.com.ua/");
         driver.get(PropertyLoader.loadProperty("url"));
@@ -70,6 +71,7 @@ public class HomePage {
         return this;
     }
 
+  //  @Step ("search something")
     public HomePage search(String searchStr) {
         this.searchStr = searchStr;
         By searchResultItem = By.xpath("//span[contains(text(), '" + searchStr + "')]");
@@ -90,6 +92,7 @@ public class HomePage {
         return this;
     }
 
+  //  @Step ("click contacts")
     public HomePage clickContacts() {
         wait.until(ExpectedConditions.elementToBeClickable(contactBtn));
         driver.findElement(contactBtn).click();
