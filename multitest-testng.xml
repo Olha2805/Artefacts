@@ -10,5 +10,32 @@
             <class name="test.java.lesson9.TestSecondParallel"/>
         </classes>
     </test>
+    <test verbose="1" name="testing-firefox" annotations="JDK">
+        <parameter name="driver-name" value="firefox"/>
+        <classes>
+            <class name="test.java.lesson9.TestFirstParallel"></class>
+            <class name="test.java.lesson9.TestSecondParallel"></class>
+        </classes>
+    </test>
+
+    <test verbose="1" name="testing-ie" annotations="JDK">
+        <parameter name="driver-name" value="ie"/>
+
+        <classes>
+            <class name="test.java.lesson9.TestFirstParallel"></class>
+            <class name="test.java.lesson9.TestSecondParallel"></class>
+        </classes>
+
+    </test>
+
+    <test verbose="1" name="testing-chrome" annotations="JDK">
+        <parameter name="driver-name" value="chrome"/>
+
+        <classes>
+            <class name="test.java.lesson9.TestFirstParallel"></class>
+            <class name="test.java.lesson9.TestSecondParallel"></class>
+        </classes>
+
+    </test>
 
 </suite>

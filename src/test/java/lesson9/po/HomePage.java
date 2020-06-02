@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.util.List;
@@ -29,20 +30,26 @@ public class HomePage {
     By passwordRegCell = By.cssSelector("[type='password']");
     By tapToBottomReg = By.cssSelector("[type='submit']");
     By nameError = By.cssSelector("[class='form__row js-name validation_type_error']");
-    private final By typesList = By.cssSelector("[class='menu-categories__link']");
-    private final By qaLinks = By.cssSelector("[name='slider-block-active']");
-    By registration = By.cssSelector("[class='header-topline__user-link link-dashed']");
-    By bottomRegistration = By.cssSelector("[class='auth-modal__register-link']");
-    By nameRegCell = By.cssSelector("[formcontrolname='name']");
-    By mailRegCell = By.cssSelector("[formcontrolname='username']");
-    By passwordRegCell = By.cssSelector("[type='password']");
-    By tapToBottomReg = By.cssSelector("[type='submit']");
-    By nameError = By.cssSelector("[class='form__row js-name validation_type_error']");
     Logger logger = LogManager.getLogger(HomePage.class);
     By tapToLaptopsAndComputers = By.cssSelector("[href='https://rozetka.com.ua/computers-notebooks/c80253/']");
     By tapToLaptop = By.cssSelector("[title='Ноутбуки']");
     By brandAcer = By.cssSelector("[for='Acer']");
     By brandList = By.cssSelector("[class='goods-tile__inner']");
+
+    public WebDriver getDriverByName(String browserType) {
+        WebDriver driver=null;
+        if (browserType.equals("ie")) {
+            System.setProperty("webdriver.ie.driver", "/IEDriverServer.exe"); // here we should write the pass
+            driver = new InternetExplorerDriver();
+        }
+        if (browserType.equals("chrome")) {
+            driver = new ChromeDriver();
+        }
+        if (browserType.equals("firefox")) {    // here we should write the pass
+            driver = new FirefoxDriver();
+        }
+        return driver;
+    }
 
 
     public HomePage(WebDriver driver) {
@@ -74,12 +81,14 @@ public class HomePage {
             e.printStackTrace();
         }
         wait.until(ExpectedConditions.visibilityOf(driver.findElement(searchResultItem)));
+        logger.trace("Key was seared");
         return this;
     }
 
     public HomePage clickContacts() {
         wait.until(ExpectedConditions.elementToBeClickable(contactBtn));
         driver.findElement(contactBtn).click();
+        logger.trace("Contact was clicked");
         return this;
     }
 
@@ -90,7 +99,6 @@ public class HomePage {
 
     public String[] expectListOfProductTypes() {
         String[] expectList = {
-
                 "Ноутбуки и компьютеры",
                 "Смартфоны, ТВ и электроника",
                 "Бытовая техника",
