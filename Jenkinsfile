@@ -2,9 +2,10 @@ pipeline{
     agent any
 
     stages{
-        stage("First"){
+        stage("Preparation"){
             steps{
-            echo "Hello"
+            echo "Download updates"
+            git "https://github.com/Olha2805/Artefacts.git"
             }
            }
 
