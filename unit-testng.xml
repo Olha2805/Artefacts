@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Fuite-suite">
+    <test name="First_test">
+        <classes>
+            <class name="test.java.lesson5.DP_Test"></class>
+            <class name="test.java.lesson5.FirstTest"></class>
+            <class name="test.java.lesson5.SecondTest"></class>
+        </classes>
+    </test>
+</suite>

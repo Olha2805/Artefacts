@@ -9,15 +9,15 @@ pipeline{
             }
            }
 
-           stage("Second"){
+           stage("Unit_Test"){
             steps{
-            echo "Hello"
+                bat 'mvn clean -DsuiteXmlFile=unit-testng.xml test'
             }
            }
 
-           stage("Third"){
+           stage("Ui_Test"){
             steps{
-            echo "Hello"
+             bat 'mvn clean -DsuiteXmlFile=unit-testng.xml test'
             }
            }
     }
