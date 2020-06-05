@@ -41,6 +41,8 @@ public class Test_PO_Rozetka extends TestBaseSetup {
     @Feature("searching system")
     @Test
     public void testB() {
+        System.out.println(String.format("User name %s , "));
+
         homePage
                 .open()
                 .search("iPhone")
