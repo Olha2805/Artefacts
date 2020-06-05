@@ -43,8 +43,8 @@ public class Listener implements
 
     @Override
     public void onTestFailure(ITestResult iTestResult) {
-        Screenshot screenshot = new Screenshot((WebDriver) iTestResult.getTestContext().getAttribute("driver"));
-        screenshot.getScreenshot(iTestResult);
+       /* Screenshot screenshot = new Screenshot((WebDriver) iTestResult.getTestContext().getAttribute("driver"));
+        screenshot.getScreenshot(iTestResult);*/
     }
 
     @Override

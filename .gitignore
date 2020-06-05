@@ -6,4 +6,6 @@ target
 logs/
 screenshots/
 allure-results/
+allure-results/!categories.json
 allure-report/
+allure/

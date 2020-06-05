@@ -1,5 +1,6 @@
 package test.java.lesson9;
 
+import io.qameta.allure.Attachment;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -37,17 +38,18 @@ public class TestBaseSetup {
 
     @AfterMethod
     public void afterMethod(ITestResult result) {
-
+        attachString();
+        attachScrin();
         driver.quit();
     }
 
- //  @Attachment
-    private String attachstring (){
+   @Attachment
+    private String attachString (){
         return "Hello attach";
     }
 
- //   @Attachment (value = "screenshot", type = "image/png")
-    private String attachscrin (){
-        return ((TakesScreenshot)driver).getScreenshotAs(OutputType.BASE64);
+    @Attachment (value = "screenshot", type = "image/png")
+    public byte[] attachScrin (){
+        return ((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
     }
 }
