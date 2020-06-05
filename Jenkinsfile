@@ -8,13 +8,13 @@ pipeline{
             }
            }
 
-           stage("First"){
+           stage("Second"){
             steps{
             echo "Hello"
             }
            }
 
-           stage("First"){
+           stage("Third"){
             steps{
             echo "Hello"
             }
