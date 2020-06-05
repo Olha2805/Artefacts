@@ -1,6 +1,8 @@
 package test.java.lesson9;
 
 
+import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -36,7 +38,7 @@ public class Test_PO_Rozetka extends TestBaseSetup {
         }
     }
 
-  //  @Feature("searching system")
+    @Feature("searching system")
     @Test
     public void testB() {
         homePage
@@ -47,8 +49,8 @@ public class Test_PO_Rozetka extends TestBaseSetup {
         faqPage.getQuestions();
     }
 
-  //  @Feature("Add to the card")
-  //  @Story ("Positive test")
+    @Feature("Add to the card")
+    @Story("Positive test")
     @Test
     public void testLurrre(){
         homePage.open().clickContacts();
@@ -56,7 +58,7 @@ public class Test_PO_Rozetka extends TestBaseSetup {
         faqPage.getQuestions();
     }
 
- //   @Feature("opening")
+    @Feature("opening")
     @Test
     public void testNext(){
         homePage.open();

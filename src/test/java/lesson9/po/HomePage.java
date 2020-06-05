@@ -36,8 +36,7 @@ public class HomePage {
     Logger logger = LogManager.getLogger(HomePage.class);
     By tapToLaptopsAndComputers = By.cssSelector("[href='https://rozetka.com.ua/computers-notebooks/c80253/']");
     By tapToLaptop = By.cssSelector("[title='Ноутбуки']");
-    By brandAcer = By.cssSelector("[for='Acer']");
-    By brandList = By.cssSelector("[class='goods-tile__inner']");
+
 
    /* public WebDriver getDriverByName(String browserType) {
         WebDriver driver=null;
@@ -186,20 +185,11 @@ public class HomePage {
     }
 
     public HomePage alternativeWay (){
-        driver.get("https://rozetka.com.ua/notebooks/c80004/");
+        driver.get("https://rozetka.com.ua/ua/notebooks/c80004/");
         logger.debug("URL: " + driver.getCurrentUrl());
         return this;
     }
 
-    public HomePage selectAcer (){
-        WebElement selectBrandAcer = driver.findElement(brandAcer);
-        wait.until(ExpectedConditions.elementToBeClickable(brandAcer)).click();
-        return this;
-    }
 
-    public List<WebElement> getBrandsList (){
-        wait.until(ExpectedConditions.visibilityOfElementLocated(brandList));
-        return driver.findElements(By.linkText(String.valueOf(brandList)));
-    }
 
 }

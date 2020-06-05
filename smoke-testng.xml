@@ -3,8 +3,11 @@
     <parameter name="browser" value="chrome"/>
     <test name="firstTest">
         <classes>
-            <class name="test.java.lesson5.DP_Test"></class>
-            <class name="test.java.lesson5.SecondTest"></class>
+            <class name="test.java.lesson9.Test_PO_Rozetka">
+                <methods>
+                    <include name="testA"/>
+                </methods>
+            </class>
         </classes>
     </test>
 </suite>
