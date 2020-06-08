@@ -52,7 +52,7 @@ public class HWArtefacts extends TestBaseSetup {
         public void brandTest (String number){
         homePage.alternativeWay();
         logger.debug("number is " + number);
-            By brands = By.cssSelector("[for="+ number);
+            By brands = By.cssSelector("[for='"+ number + "']");
             logger.trace("CssSelector is " + brands);
             wait.until(ExpectedConditions.elementToBeClickable(brands));
 
