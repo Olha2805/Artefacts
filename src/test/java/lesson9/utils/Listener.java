@@ -43,8 +43,15 @@ public class Listener implements
 
     @Override
     public void onTestFailure(ITestResult iTestResult) {
-       /* Screenshot screenshot = new Screenshot((WebDriver) iTestResult.getTestContext().getAttribute("driver"));
-        screenshot.getScreenshot(iTestResult);*/
+        // Настроить снятие скриншотов только по упавшим тестам
+        Screenshot screenshot = new Screenshot((WebDriver) iTestResult.getTestContext().getAttribute("driver"));
+        screenshot.getScreenshot(iTestResult);
+
+        //Настроить повторный прогон упавших тестов
+        Reporter.setCurrentTestResult(iTestResult);
+        if(iTestResult.getMethod().getRetryAnalyzer().retry(iTestResult))
+            iTestResult.setStatus(ITestResult.SKIP);
+        Reporter.setCurrentTestResult(null);
     }
 
     @Override
