@@ -80,7 +80,6 @@ public class HWRandom extends TestBaseSetup {
         logger.debug("number is " + number);
         By brand = By.cssSelector("[for='"+ number + "']");
         logger.trace("CssSelector is " + brand);
-        wait.until(ExpectedConditions.elementToBeSelected(brand));
         wait.until(ExpectedConditions.elementToBeClickable(brand));
 
         driver.findElement(brand).click();
