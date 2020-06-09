@@ -80,16 +80,16 @@ public class HWRandom extends TestBaseSetup {
         logger.debug("number is " + number);
         By brand = By.cssSelector("[for='"+ number + "']");
         logger.trace("CssSelector is " + brand);
-        wait.until(ExpectedConditions.elementToBeClickable(brand));
+     //   wait.until(ExpectedConditions.elementToBeClickable(brand));
 
         driver.findElement(brand).click();
         logger.info("click done");
-        wait.until(ExpectedConditions.visibilityOfElementLocated(goodsList));
+       // wait.until(ExpectedConditions.visibilityOfElementLocated(goodsList));
 
         List<WebElement> actualList = driver.findElements(goodsList);
         logger.info("Actual List size is  " + actualList.size());
 
-        wait.until(ExpectedConditions.elementToBeSelected(goodsList));
+
             // wait.until(ExpectedConditions.visibilityOfElementLocated(goodsList));
             logger.debug("actual list length is: " + actualList.size());
             System.out.println("done");
