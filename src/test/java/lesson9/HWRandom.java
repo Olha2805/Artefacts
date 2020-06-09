@@ -11,6 +11,7 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+import org.w3c.dom.Text;
 import test.java.lesson9.po.ContactPage;
 import test.java.lesson9.po.FaqPage;
 import test.java.lesson9.po.HomePage;
@@ -29,7 +30,9 @@ public class HWRandom extends TestBaseSetup {
     ContactPage contactPage;
     FaqPage faqPage;
     SearchPage searchPage;
-    By goodsList = By.cssSelector("[class='goods-tile__inner']");
+    By goodsList = By.xpath("//input[contains(@onclick,'goods-tile__inner')]/..");
+    // By goodsList = By.cssSelector("[class='goods-tile__inner']");
+
 
     @BeforeMethod
     public void initialize() {
@@ -78,7 +81,8 @@ public class HWRandom extends TestBaseSetup {
         logger.info("rand is " + number);
         homePage.alternativeWay();
         logger.debug("number is " + number);
-        By brand = By.cssSelector("[for='"+ number + "']");
+       // By brand = By.cssSelector("[for='"+ number + "']");
+        By brand = By.xpath("//input[contains(@onclick," + number + ")]/..");
         logger.trace("CssSelector is " + brand);
 
         driver.findElement(brand).click();
@@ -86,9 +90,6 @@ public class HWRandom extends TestBaseSetup {
 
         List<WebElement> actualList = driver.findElements(goodsList);
         logger.info("Actual List size is  " + actualList.size());
-
-            logger.debug("actual list length is: " + actualList.size());
-            System.out.println("done");
 
             String actualRes = actualList.toString().toLowerCase();
             logger.info("ActualRes done" );

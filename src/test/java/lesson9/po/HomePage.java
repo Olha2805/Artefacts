@@ -185,7 +185,7 @@ public class HomePage {
     }
 
     public HomePage alternativeWay (){
-        driver.get("https://rozetka.com.ua/ua/notebooks/c80004/");
+        driver.get("https://rozetka.com.ua/ua/notebooks/c80004/filter");
         logger.debug("URL: " + driver.getCurrentUrl());
         return this;
     }
