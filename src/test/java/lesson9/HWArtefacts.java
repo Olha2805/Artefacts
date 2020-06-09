@@ -54,10 +54,8 @@ public class HWArtefacts extends TestBaseSetup {
         logger.debug("number is " + number);
             By brands = By.cssSelector("[for='"+ number + "']");
             logger.trace("CssSelector is " + brands);
-            wait.until(ExpectedConditions.elementToBeClickable(brands));
 
             driver.findElement(brands).click();
-            wait.until(ExpectedConditions.visibilityOfElementLocated(goodsList));
             logger.info("wait done");
 
             List<WebElement> actualList = driver.findElements(goodsList);
@@ -65,7 +63,6 @@ public class HWArtefacts extends TestBaseSetup {
 
             for (WebElement actualArray: actualList) {
 
-                wait.until(ExpectedConditions.visibilityOfElementLocated(goodsList));
                 logger.debug("actual list length is: " + actualArray.getSize());
                 System.out.println("done");
 
@@ -75,7 +72,6 @@ public class HWArtefacts extends TestBaseSetup {
                 String expectedRes = number.toLowerCase();
                 logger.debug("expected is " + expectedRes);
 
-                System.out.println("we are expecting " + expectedRes + " in string "+ actualRes);
                 assertTrue(actualRes.contains(expectedRes));
             }
 

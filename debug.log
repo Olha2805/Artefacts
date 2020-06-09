@@ -1,0 +1,3 @@
+[0608/223129.363:ERROR:process_reader_win.cc(151)] SuspendThread: Отказано в доступе. (0x5)
+[0608/223129.364:ERROR:process_reader_win.cc(151)] SuspendThread: Отказано в доступе. (0x5)
+[0608/223129.364:ERROR:exception_snapshot_win.cc(98)] thread ID 10600 not found in process

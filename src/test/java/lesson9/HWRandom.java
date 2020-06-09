@@ -80,17 +80,13 @@ public class HWRandom extends TestBaseSetup {
         logger.debug("number is " + number);
         By brand = By.cssSelector("[for='"+ number + "']");
         logger.trace("CssSelector is " + brand);
-     //   wait.until(ExpectedConditions.elementToBeClickable(brand));
 
         driver.findElement(brand).click();
         logger.info("click done");
-       // wait.until(ExpectedConditions.visibilityOfElementLocated(goodsList));
 
         List<WebElement> actualList = driver.findElements(goodsList);
         logger.info("Actual List size is  " + actualList.size());
 
-
-            // wait.until(ExpectedConditions.visibilityOfElementLocated(goodsList));
             logger.debug("actual list length is: " + actualList.size());
             System.out.println("done");
 
@@ -103,7 +99,6 @@ public class HWRandom extends TestBaseSetup {
             System.out.println("we are expecting " + expectedRes + " in string "+ actualRes);
             assertTrue(actualRes.contains(expectedRes));
         }
-
 
     }
 
