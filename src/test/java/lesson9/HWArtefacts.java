@@ -54,23 +54,14 @@ public class HWArtefacts extends TestBaseSetup {
         logger.debug("number is " + number);
             By brands = By.cssSelector("[for='"+ number + "']");
             logger.trace("CssSelector is " + brands);
-
             driver.findElement(brands).click();
-            logger.info("wait done");
-
             List<WebElement> actualList = driver.findElements(goodsList);
             logger.info("Actual List size is  " + actualList.size());
-
             for (WebElement actualArray: actualList) {
 
-                logger.debug("actual list length is: " + actualArray.getSize());
-                System.out.println("done");
-
                 String actualRes = actualArray.getText().toLowerCase();
-                logger.info("ActualRes done" );
-
+                logger.info("ActualRes is " + actualRes );
                 String expectedRes = number.toLowerCase();
-                logger.debug("expected is " + expectedRes);
 
                 assertTrue(actualRes.contains(expectedRes));
             }
