@@ -30,8 +30,8 @@ public class HWRandom extends TestBaseSetup {
     ContactPage contactPage;
     FaqPage faqPage;
     SearchPage searchPage;
-    By goodsList = By.xpath("//input[contains(@onclick,'goods-tile__inner')]/..");
-    // By goodsList = By.cssSelector("[class='goods-tile__inner']");
+   // By goodsList = By.xpath("//input[contains(@onclick,'goods-tile__inner')]/..");
+    By goodsList = By.cssSelector("[class='goods-tile__inner']");
 
 
     @BeforeMethod
@@ -81,24 +81,24 @@ public class HWRandom extends TestBaseSetup {
         logger.info("rand is " + number);
         homePage.alternativeWay();
         logger.debug("number is " + number);
-       // By brand = By.cssSelector("[for='"+ number + "']");
-        By brand = By.xpath("//input[contains(@onclick," + number + ")]/..");
+        By brand = By.cssSelector("[for='"+ number + "']");
         logger.trace("CssSelector is " + brand);
 
         driver.findElement(brand).click();
         logger.info("click done");
 
-        List<WebElement> actualList = driver.findElements(goodsList);
+        List <WebElement> actualList = driver.findElements(goodsList);
         logger.info("Actual List size is  " + actualList.size());
 
-            String actualRes = actualList.toString().toLowerCase();
-            logger.info("ActualRes done" );
+        for (WebElement actualRes: actualList) {
+
+            String actual = actualRes.getText().toLowerCase();
+            logger.info("Actual is" + actual);
 
             String expectedRes = number.toLowerCase();
-            logger.debug("expected is " + expectedRes);
 
-            System.out.println("we are expecting " + expectedRes + " in string "+ actualRes);
-            assertTrue(actualRes.contains(expectedRes));
+            assertTrue(actual.contains(expectedRes));
+         }
         }
 
     }
