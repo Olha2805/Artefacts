@@ -52,8 +52,11 @@ public class HWArtefacts extends TestBaseSetup {
         public void brandTest (String number){
         homePage.alternativeWay();
         logger.debug("number is " + number);
-            By brands = By.cssSelector("[for='"+ number + "']");
+           // By brands = By.cssSelector("[for='"+ number + "']");
+            By brands = By.xpath("//label//child::i[text()='" + number + "'] | //label[@for='" + number + "']");
             logger.trace("CssSelector is " + brands);
+            wait = new WebDriverWait(this.driver, 10);
+            wait.until(ExpectedConditions.elementToBeClickable(brands));
             driver.findElement(brands).click();
             List<WebElement> actualList = driver.findElements(goodsList);
             logger.info("Actual List size is  " + actualList.size());

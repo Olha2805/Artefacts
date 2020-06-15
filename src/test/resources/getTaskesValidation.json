@@ -1,0 +1,156 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Tasks set",
+  "type": "array",
+  "items": {
+    "title": "Product",
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "number"
+      },
+      "project_id": {
+        "type": "number"
+      },
+      "section_id": {
+        "type": "number"
+      },
+      "order": {
+        "type": "number"
+      },
+      "content": {
+        "type": "string"
+      },
+      "completed": {
+        "type": "boolean"
+      },
+      "label_ids": {
+        "type": "string"
+      },
+      "priority": {
+        "type": "number"
+      },
+      "comment_count": {
+        "type": "number"
+      },
+      "created": {
+        "type": "string"
+      },
+      "url": {
+        "type": "string"
+      }
+    },
+    "required": ["id", "project_id", "content", "completed"]
+  }
+}
+ /*
+[{id=3959018667,
+      project_id=2237884060,
+      section_id=0,
+      order=1,
+      content=java,
+      completed=false,
+      label_ids=[],
+      priority=1,
+      comment_count=0,
+      created=2020-06-09T17:06:31Z,
+      url=https://todoist.com/showTask?id=3959018667},
+
+   {id=3959019610,
+        project_id=2237884060,
+        section_id=0,
+        order=2,
+        content=python,
+        completed=false,
+        label_ids=[],
+        priority=1,
+        comment_count=0,
+        created=2020-06-09T17:06:43Z,
+        url=https://todoist.com/showTask?id=3959019610},
+
+     {id=3959020058,
+         project_id=2237884060,
+         section_id=0,
+         order=3,
+         content=selenium,
+         completed=false,
+         label_ids=[],
+         priority=1,
+         comment_count=0,
+         created=2020-06-09T17:06:48Z,
+         url=https://todoist.com/showTask?id=3959020058},
+
+      {id=3965626035,
+        project_id=2238073009,
+        section_id=0,
+        order=1,
+        content=something,
+        completed=false,
+        label_ids=[],
+        priority=1,
+        comment_count=0,
+        created=2020-06-12T11:41:40Z,
+        url=https://todoist.com/showTask?id=3965626035},
+
+     {id=3965626128,
+        project_id=2238073009,
+        section_id=0,
+        order=2,
+        content=some,
+        completed=false,
+        label_ids=[],
+        priority=1,
+        comment_count=0,
+        created=2020-06-12T11:41:44Z,
+        url=https://todoist.com/showTask?id=3965626128},
+
+    {id=3971181298,
+        project_id=2238241528,
+        section_id=0,
+        order=1,
+        content=homework api testing,
+        completed=false,
+        label_ids=[],
+        priority=1,
+        comment_count=0,
+        created=2020-06-15T10:36:15Z,
+         url=https://todoist.com/showTask?id=3971181298},
+
+     {id=3971280436,
+        project_id=2238244187,
+        section_id=0,
+        order=1,
+         content=POland,
+         completed=false,
+         label_ids=[],
+         priority=1,
+         comment_count=0,
+         created=2020-06-15T11:23:49Z,
+         url=https://todoist.com/showTask?id=3971280436},
+
+
+       {id=3971280693,
+       project_id=2238244187,
+       section_id=0,
+       order=2,
+       content=Nordcap,
+       completed=false,
+       label_ids=[],
+       priority=1,
+       comment_count=0,
+       created=2020-06-15T11:23:57Z,
+       url=https://todoist.com/showTask?id=3971280693},
+
+
+       {id=3971281605,
+       project_id=2238244187,
+        section_id=0,
+        order=3,
+        content=Italy,
+        completed=false,
+        label_ids=[],
+         priority=1,
+        comment_count=0,
+        created=2020-06-15T11:24:26Z,
+        url=https://todoist.com/showTask?id=3971281605}]
+ */
