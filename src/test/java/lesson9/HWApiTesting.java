@@ -35,7 +35,7 @@ public class HWApiTesting {
                 then().
           //      statusCode(200).
         assertThat().
-                body(matchesJsonSchemaInClasspath("src\\test\\resources\\getTaskesValidation.json"));
+                body(matchesJsonSchemaInClasspath("getTasksValidation.json"));
         assertTrue(tasksList.size() == tasksCount, "We have some another count than size of list");
 
     }
